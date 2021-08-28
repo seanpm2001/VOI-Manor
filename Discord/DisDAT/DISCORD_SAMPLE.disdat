@@ -1,0 +1,30 @@
+#$JSON_DISDAT//$
+##START##{
+// This is a sample Discord server backup of a new Discord server for testing the DIScord DATa file format (*.disdat)
+{{:LIBRARIES:}}
+library.onload(discord(main)); // Main Discord library
+library.onload(discord(cat)); // Category library
+library.onload(discord(pref)); // Preferences library
+library.onload(discord(rooms)); // Room library
+library.onload(discord(roles)); // Roles library
+{{:CATEGORIES:}}
+**{Main}** {
+{{:ROOMS:}}
+*{General}* {
+  this.channel(type == "text/media"); // Defines that this is a text channel with media uploads
+  this.channel(type == "lobby"); // Special case for indicating that this is the starter room
+  this.channel(roles.all == "true"); // Specifies that there are no roles and no rules
+  **Role: admin** {
+    this.role.admin(permissions = " ",  " ", " "); // Specifies the permissions for this user role
+  }
+  **Role: user** {
+    this.role.user(permissions = " ",  " ",  " "); // Specifies the permissions for this user role
+  }
+}}
+// This is pseudocode and serves as an example of the plans for this data file format.
+// Time stamp: 2021 Friday, August 27th at 7:40 pm
+// Line count: 31
+// File type: Discord Data backup file (*.disdat)
+// Syntax type: Custom (object oriented, syntax inspired by JSON, Shell, Java, Python, and JavaScript.
+\\$DISDAT_END[]}
+break;
